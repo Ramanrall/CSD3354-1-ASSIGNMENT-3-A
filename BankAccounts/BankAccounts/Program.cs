@@ -19,6 +19,8 @@ namespace BankAccounts
 
         private bool m_frozen = false;
 
+        private int amount;
+
         private BankAccount()
         {
         }
@@ -39,7 +41,7 @@ namespace BankAccounts
             get { return m_balance; }
         }
 
-        public void Debit(double amount)
+        public void Debit(double amo5unt)
         {
             if (m_frozen)
             {
@@ -56,7 +58,7 @@ namespace BankAccounts
                 throw new ArgumentOutOfRangeException("amount");
             }
 
-            m_balance += amount; // intentionally incorrect code
+            m_balance -= amount; // intentionally incorrect code
         }
 
         public void Credit(double amount)
